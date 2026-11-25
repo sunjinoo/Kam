@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0c0e17" />
+  <meta name="description" content="كَم؟ — قارن أسعار المنتجات والخدمات في مصر، راجع الأسعار السابقة، واكتشف أفضل العروض قبل الشراء." />
+  <title>كَم؟ KAM — اعرف السعر قبل ما تدفع</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="topbar-inner wrap">
+        <a class="brand" href="#home" aria-label="كَم؟ الصفحة الرئيسية" data-nav="home">
+          <span class="brand-mark">ك</span>
+          <span class="brand-copy">
+<strong>كَم؟</strong>
+<small>KAM PRICE INTELLIGENCE</small>
+</span>
+        </a>
+        <nav class="desktop-nav" aria-label="القائمة الرئيسية">
+          <button class="nav-link active" data-view="home">الرئيسية</button>
+          <button class="nav-link" data-view="explore">استكشف الأسعار</button>
+          <button class="nav-link" data-view="deals">العروض</button>
+          <button class="nav-link" data-view="compare">قارن سعر</button>
+        </nav>
+        <div class="top-actions">
+          <button class="icon-button language-toggle" id="languageToggle" title="Switch to English" aria-label="Switch to English">EN</button>
+          <button class="icon-button" id="themeToggle" title="تغيير المظهر" aria-label="تغيير المظهر">◐</button>
+          <button class="icon-button" id="savedButton" title="المحفوظات" aria-label="المحفوظات">♡</button>
+          <button class="button button-quiet admin-shortcut" data-view="account">حسابي</button>
+          <button class="button button-primary add-shortcut" data-view="contribute">＋ أضف سعرًا</button>
+          <button class="icon-button mobile-menu-button" id="mobileMenuButton" aria-label="فتح القائمة">☰</button>
+        </div>
+      </div>
+      <div class="mobile-menu wrap" id="mobileMenu">
+        <button data-view="home">الرئيسية</button>
+<button data-view="explore">استكشف الأسعار</button>
+<button data-view="deals">العروض</button>
+<button data-view="compare">قارن سعر</button>
+<button data-view="contribute">أضف سعرًا</button>
+<button data-view="account">حسابي</button>
+      </div>
+    </header>
+
+    <main class="wrap main-content">
+      <section class="view active" id="view-home">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">
+<span class="pulse-dot">
+</span> دليل الأسعار الذكي في مصر</div>
+            <h1>قبل ما تشتري…<br/>
+<span>اعرف السعر الحقيقي.</span>
+</h1>
+            <p>قارن أسعار المنتجات بين المتاجر، واكتشف تكلفة الخدمات من تجارب الناس. معلومات أوضح، ومفاجآت أقل عند الدفع.</p>
+            <div class="hero-search" role="search">
+              <span class="search-symbol">⌕</span>
+              <input id="heroSearch" autocomplete="off" placeholder="ابحث عن موبايل، غسالة، كنبة، تصليح تكييف..." aria-label="ابحث عن منتج أو خدمة" />
+              <select id="heroGovernorate" aria-label="المحافظة">
+<option value="كل مصر">كل مصر</option>
+</select>
+              <button class="button button-primary" id="heroSearchButton">ابحث</button>
+            </div>
+            <div class="popular-searches">
+<span>الأكثر بحثًا:</span>
+<button data-query="iPhone 16">iPhone 16</button>
+<button data-query="غسالة">غسالة</button>
+<button data-query="مرتبة سرير">مرتبة</button>
+<button data-query="تصليح تكييف">تصليح تكييف</button>
+</div>
+            <div class="hero-proof">
+<span>✓ مصادر واضحة</span>
+<span>✓ أسعار مؤرخة</span>
+<span>✓ بدون ترتيب مدفوع</span>
+</div>
+          </div>
+          <div class="hero-visual">
+            <div class="visual-top">
+<span>لقطة من مقارنة الأسعار</span>
+<span class="live-pill" id="heroLivePill">بانتظار ربط المتاجر</span>
+</div>
+            <div class="visual-product">
+<div class="product-art">📱</div>
+<div>
+<strong>مقارنة منتج واحد</strong>
+<small>السعر يختلف من متجر لآخر</small>
+</div>
+</div>
+            <div class="visual-price-row">
+<span>أقل عرض ظاهر</span>
+<strong>— <small>ج.م</small>
+</strong>
+</div>
+            <div class="visual-bars">
+<i style="height:46%">
+</i>
+<i style="height:70%">
+</i>
+<i style="height:58%">
+</i>
+<i style="height:88%">
+</i>
+<i style="height:63%">
+</i>
+<i style="height:77%">
+</i>
+<i style="height:54%">
+</i>
+</div>
+            <div class="visual-footer">
+<span>المقارنة الفعلية تظهر بعد تفعيل مصدر البيانات</span>
+<span>↗</span>
+</div>
+            <div class="floating-note">
+<span class="note-icon">⌁</span>
+<span>
+<strong>قرار أذكى</strong>
+<small>قارن قبل ما تدفع</small>
+</span>
+</div>
+          </div>
+        </div>
+
+        <section class="section-block">
+          <div class="section-heading">
+<div>
+<span class="kicker">تصفح حسب احتياجك</span>
+<h2>كل اللي بتدور عليه في مكان واحد</h2>
+<p>من الموبايلات والسوبر ماركت لحد الصيانة والخدمات المنزلية.</p>
+</div>
+<button class="text-button" data-view="explore">كل الأقسام <span>←</span>
+</button>
+</div>
+          <div class="category-grid" id="homeCategories">
+</div>
+        </section>
+
+        <section class="section-block two-panel-section">
+          <div class="section-heading">
+<div>
+<span class="kicker">معلومة قبل الشراء</span>
+<h2>مش كل سعر قليل صفقة</h2>
+<p>قارن السعر مع حالة المنتج والضمان والشحن والبائع.</p>
+</div>
+</div>
+          <div class="feature-grid">
+            <article class="feature-card">
+<div class="feature-icon violet">⇄</div>
+<h3>قارن بين المتاجر</h3>
+<p>شوف العروض المتاحة لنفس المنتج مرتبة حسب السعر، مع رابط المصدر وتاريخ آخر رصد.</p>
+</article>
+            <article class="feature-card">
+<div class="feature-icon green">⌁</div>
+<h3>تابع تغير السعر</h3>
+<p>احفظ المنتجات التي تهمك، وارجع لسجل السعر عندما تكون بيانات التاريخ متاحة.</p>
+</article>
+            <article class="feature-card">
+<div class="feature-icon amber">◎</div>
+<h3>اسأل المجتمع</h3>
+<p>اعرف الناس دفعت كام في الصيانة والخدمات، مع توضيح عدد التجارب المعتمدة.</p>
+</article>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading">
+<div>
+<span class="kicker">مصادر الأسعار</span>
+<h2>المتاجر والمنصات</h2>
+<p>بعض المصادر تظهر من خلال مزود البيانات، والبعض الآخر روابط بحث خارجية.</p>
+</div>
+<span class="source-count" id="sourceStatus">جارٍ فحص الاتصال…</span>
+</div>
+          <div class="store-strip" id="storeStrip">
+</div>
+          <div class="disclaimer compact-disclaimer">
+<span>ⓘ</span>
+<p>لن نعرض سعرًا على أنه مباشر إلا إذا وصل من مصدر متصل ومعه وقت الرصد. الإعلانات المستعملة وروابط البحث الخارجية لا تُعامل كعروض أسعار مؤكدة.</p>
+</div>
+        </section>
+      </section>
+
+      <section class="view" id="view-explore">
+        <div class="page-heading">
+<div>
+<span class="kicker">استكشف</span>
+<h1>دور على اللي محتاجه</h1>
+<p>ابحث في المنتجات والخدمات، وحدد القسم والمحافظة.</p>
+</div>
+<button class="button button-quiet" id="filterToggle">☷ الفلاتر</button>
+</div>
+        <div class="explore-layout">
+          <aside class="filter-panel" id="filterPanel">
+            <div class="filter-title">
+<strong>تصفية النتائج</strong>
+<button class="text-button" id="clearFilters">مسح الكل</button>
+</div>
+            <label class="field-label">نوع البحث</label>
+            <div class="segmented" id="kindSegment">
+<button class="selected" data-kind="all">الكل</button>
+<button data-kind="product">منتجات</button>
+<button data-kind="service">خدمات</button>
+</div>
+            <label class="field-label" for="exploreCategory">القسم</label>
+<select id="exploreCategory" class="input-control">
+<option value="all">كل الأقسام</option>
+</select>
+            <label class="field-label" for="exploreGovernorate">المحافظة</label>
+<select id="exploreGovernorate" class="input-control">
+<option value="كل مصر">كل مصر</option>
+</select>
+            <label class="field-label" for="exploreSort">ترتيب النتائج</label>
+<select id="exploreSort" class="input-control">
+<option value="relevance">الأكثر صلة</option>
+<option value="priceAsc">السعر: الأقل أولًا</option>
+<option value="priceDesc">السعر: الأعلى أولًا</option>
+<option value="newest">الأحدث</option>
+</select>
+            <div class="filter-help">المنتجات تعتمد على تغذية المتاجر عند تفعيلها. الخدمات تعتمد على تجارب المجتمع التي اجتازت المراجعة.</div>
+          </aside>
+          <div class="explore-results">
+            <div class="search-toolbar">
+<div class="search-input-wrap">
+<span>⌕</span>
+<input id="exploreSearch" placeholder="اسم المنتج أو الخدمة..."/>
+<button id="exploreGo">بحث</button>
+</div>
+<span class="results-count" id="resultsCount">ابدأ بالبحث</span>
+</div>
+            <div class="active-filter-chips" id="activeChips">
+</div>
+            <div class="results-grid" id="exploreResults">
+<div class="empty-state">
+<div>⌕</div>
+<h3>اكتب اللي بتدور عليه</h3>
+<p>هنعرض لك عروض المتاجر أو تجارب الأسعار المعتمدة حسب نوع البحث.</p>
+</div>
+</div>
+            <div class="external-sources" id="externalSources" hidden>
+</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-deals">
+        <div class="page-heading">
+<div>
+<span class="kicker">فرص الشراء</span>
+<h1>العروض وتخفيضات الأسعار</h1>
+<p>نعرض التخفيضات الموثقة فقط عندما يكون مصدر الأسعار متصلًا.</p>
+</div>
+<button class="button button-quiet" id="refreshDeals">↻ تحديث</button>
+</div>
+        <div class="notice-banner">
+<span>✦</span>
+<p>
+<strong>خصم حقيقي ولا مجرد رقم؟</strong> هدفنا مقارنة السعر بتاريخ المنتج المعتاد، وليس الاعتماد على نسبة الخصم المكتوبة في الإعلان وحدها.</p>
+</div>
+        <div class="deal-grid" id="dealsGrid">
+<div class="empty-state wide">
+<div>✦</div>
+<h3>العروض الحية لم تُربط بعد</h3>
+<p>فعّل مفتاح مزود الأسعار على السيرفر لعرض صفقات حقيقية من المتاجر المشاركة.</p>
+<button class="button button-quiet" data-view="explore">ابحث عن منتج بدلًا من ذلك</button>
+</div>
+</div>
+      </section>
+
+      <section class="view" id="view-compare">
+        <div class="page-heading">
+<div>
+<span class="kicker">اتخذ قرارًا</span>
+<h1>قارن السعر المعروض عليك</h1>
+<p>قارن المنتجات بين المتاجر أو قارن تكلفة خدمة بتجارب حقيقية.</p>
+</div>
+</div>
+        <div class="compare-mode-tabs">
+<button class="selected" data-compare-mode="product">مقارنة منتج</button>
+<button data-compare-mode="service">مقارنة خدمة</button>
+</div>
+        <div class="compare-workspace">
+          <div class="panel-card compare-form-card" id="productCompareForm">
+            <div class="panel-title">
+<span class="panel-icon">⇄</span>
+<div>
+<h3>مقارنة المتاجر</h3>
+<p>ابحث عن منتج لمقارنة عروضه.</p>
+</div>
+</div>
+            <label class="field-label" for="compareProductQuery">اسم المنتج</label>
+<input class="input-control" id="compareProductQuery" placeholder="مثلاً Samsung Galaxy A56" />
+            <label class="field-label" for="compareProductCategory">القسم عند المقارنة بتجارب المجتمع</label>
+<select class="input-control" id="compareProductCategory"></select>
+            <label class="field-label" for="compareProductGovernorate">المحافظة عند المقارنة بتجارب المجتمع</label>
+<select class="input-control" id="compareProductGovernorate"></select>
+            <label class="field-label" for="compareYourPrice">السعر المعروض عليك (اختياري)</label>
+<input class="input-control" id="compareYourPrice" type="number" min="1" placeholder="مثلاً 14500" />
+            <button class="button button-primary full-button" id="compareProductButton">قارن الأسعار</button>
+            <p class="form-footnote">هتظهر المقارنة فقط عند وصول عروض فعلية من مصدر متصل. لا توجد أسعار افتراضية في نتيجة المقارنة.</p>
+          </div>
+          <div class="panel-card compare-form-card" id="serviceCompareForm" hidden>
+            <div class="panel-title">
+<span class="panel-icon">◎</span>
+<div>
+<h3>مقارنة تكلفة خدمة</h3>
+<p>استخدم تجارب معتمدة من نفس المحافظة ونفس نوع الخدمة.</p>
+</div>
+</div>
+            <label class="field-label" for="serviceName">اسم الخدمة بدقة</label>
+<input class="input-control" id="serviceName" placeholder="مثلاً تنظيف تكييف سبليت" />
+            <label class="field-label" for="serviceCategory">القسم</label>
+<select class="input-control" id="serviceCategory">
+</select>
+            <label class="field-label" for="serviceGovernorate">المحافظة</label>
+<select class="input-control" id="serviceGovernorate">
+</select>
+            <label class="field-label" for="serviceQuote">السعر المعروض عليك (جنيه)</label>
+<input class="input-control" id="serviceQuote" type="number" min="1" placeholder="مثلاً 650" />
+            <button class="button button-primary full-button" id="compareServiceButton">حلّل السعر</button>
+            <p class="form-footnote">لن نصدر حكمًا قبل توفر خمس تجارب معتمدة على الأقل خلال آخر 180 يومًا.</p>
+          </div>
+          <div class="panel-card compare-output" id="compareOutput">
+<div class="empty-state">
+<div>⇄</div>
+<h3>نتيجة المقارنة هتظهر هنا</h3>
+<p>أدخل بيانات المنتج أو الخدمة وابدأ المقارنة.</p>
+</div>
+</div>
+        </div>
+      </section>
+
+      <section class="view" id="view-contribute">
+        <div class="page-heading">
+<div>
+<span class="kicker">ساعد غيرك</span>
+<h1>شارك السعر اللي دفعته</h1>
+<p>كل تجربة مفصلة ومعتمدة تساعد الناس تتجنب المبالغة في الأسعار.</p>
+</div>
+<span class="privacy-pill">🔒 خصوصيتك أولًا</span>
+</div>
+        <div class="contribute-layout">
+          <form class="panel-card contribute-form" id="contributionForm">
+            <div class="form-section-heading">
+<span>01</span>
+<div>
+<h3>نوع التجربة</h3>
+<p>هل بتشارك سعر منتج اشتريته ولا خدمة دفعت تكلفتها؟</p>
+</div>
+</div>
+            <div class="segmented full-segment" id="contributionKind">
+<button type="button" class="selected" data-kind="product">منتج اشتريته</button>
+<button type="button" data-kind="service">خدمة دفعت تكلفتها</button>
+</div>
+            <div class="form-section-heading">
+<span>02</span>
+<div>
+<h3>تفاصيل السعر</h3>
+<p>كلما كانت البيانات أدق، كانت المقارنة أعدل.</p>
+</div>
+</div>
+            <div class="form-grid">
+              <div class="form-field span-2">
+<label for="contributionName">اسم المنتج أو الخدمة *</label>
+<input class="input-control" id="contributionName" required maxlength="180" placeholder="مثلاً: تركيب سخان غاز" />
+</div>
+              <div class="form-field">
+<label for="contributionCategory">القسم *</label>
+<select class="input-control" id="contributionCategory" required>
+</select>
+</div>
+              <div class="form-field">
+<label for="contributionBrand">الماركة / النوع</label>
+<input class="input-control" id="contributionBrand" maxlength="80" placeholder="اختياري" />
+</div>
+              <div class="form-field">
+<label for="contributionGovernorate">المحافظة *</label>
+<select class="input-control" id="contributionGovernorate" required>
+</select>
+</div>
+              <div class="form-field">
+<label for="contributionCity">المدينة / المنطقة</label>
+<input class="input-control" id="contributionCity" maxlength="100" placeholder="مثلاً: المنصورة" />
+</div>
+              <div class="form-field">
+<label for="contributionPrice">المبلغ بالجنيه *</label>
+<input class="input-control" id="contributionPrice" required type="number" min="1" max="100000000" placeholder="0" />
+</div>
+              <div class="form-field">
+<label for="contributionDate">تاريخ الدفع *</label>
+<input class="input-control" id="contributionDate" required type="date" />
+</div>
+              <div class="form-field">
+<label for="contributionSeller">المتجر / مقدم الخدمة</label>
+<input class="input-control" id="contributionSeller" maxlength="100" placeholder="اختياري" />
+</div>
+              <div class="form-field">
+<label for="contributionRating">تقييم التجربة</label>
+<select class="input-control" id="contributionRating">
+<option value="5">★★★★★ ممتاز</option>
+<option value="4">★★★★☆ جيد جدًا</option>
+<option value="3" selected>★★★☆☆ جيد</option>
+<option value="2">★★☆☆☆ ضعيف</option>
+<option value="1">★☆☆☆☆ سيئ</option>
+</select>
+</div>
+              <div class="form-field span-2">
+<label for="contributionNote">تفاصيل إضافية</label>
+<textarea class="input-control textarea-control" id="contributionNote" maxlength="600" placeholder="الموديل، حالة المنتج، القطع، المصنعية، الضمان أو أي تفاصيل تؤثر على السعر...">
+</textarea>
+</div>
+            </div>
+            <div class="form-confirmations">
+<label class="check-row">
+<input type="checkbox" id="contributionTruth" required />
+<span>أؤكد أن السعر يعبر عن تجربة حقيقية وأنني لا أضيف بيانات مضللة.</span>
+</label>
+<label class="check-row">
+<input type="checkbox" id="contributionPrivacy" required />
+<span>لن أرسل بيانات شخصية أو أرقام هواتف أو فواتير تحتوي على معلومات حساسة.</span>
+</label>
+</div>
+            <button class="button button-primary full-button" type="submit">إرسال للمراجعة <span>←</span>
+</button>
+            <p class="form-footnote">المساهمة لا تظهر في متوسط الأسعار إلا بعد اعتمادها من المراجعة.</p>
+          </form>
+          <aside class="panel-card contribution-aside">
+<div class="aside-art">✧</div>
+<h3>مساهمتك بتفرق</h3>
+<p>كل سعر حقيقي بتشاركه بيساعد شخص تاني ياخد قرار أفضل.</p>
+<div class="review-steps">
+<div>
+<i>1</i>
+<span>
+<strong>استلام المشاركة</strong>
+<small>نتأكد من اكتمال البيانات.</small>
+</span>
+</div>
+<div>
+<i>2</i>
+<span>
+<strong>مراجعة الجودة</strong>
+<small>نراجع التكرار والتفاصيل المتاحة.</small>
+</span>
+</div>
+<div>
+<i>3</i>
+<span>
+<strong>الاعتماد والنشر</strong>
+<small>السعر يدخل الإحصائيات بعد المراجعة.</small>
+</span>
+</div>
+</div>
+<div class="privacy-box">🔐 لن تظهر هويتك العامة في صفحة السعر. استخدم رابط إثبات عام فقط لو كان لا يكشف بياناتك.</div>
+</aside>
+        </div>
+      </section>
+
+      <section class="view" id="view-saved">
+        <div class="page-heading">
+<div>
+<span class="kicker">قائمتك</span>
+<h1>المحفوظات والتنبيهات</h1>
+<p>احتفظ بعمليات البحث والمنتجات التي تريد العودة إليها.</p>
+</div>
+</div>
+        <div class="saved-tabs">
+<button class="selected" data-saved-tab="favorites">المحفوظات</button>
+<button data-saved-tab="alerts">تنبيهات الأسعار</button>
+<button data-saved-tab="recent">عمليات البحث الأخيرة</button>
+</div>
+        <div id="savedContent" class="saved-content">
+</div>
+      </section>
+
+      <section class="view" id="view-account">
+        <div class="page-heading">
+<div>
+<span class="kicker">ملفك</span>
+<h1>حساب ومساهماتك</h1>
+<p>تقدر تتابع حالة الأسعار اللي شاركتها من نفس المتصفح.</p>
+</div>
+<span class="account-chip" id="accountIdentifier">مستخدم كَم؟</span>
+</div>
+        <section class="account-auth-card panel-card" id="accountAuthCard" aria-labelledby="authHeading">
+          <div class="auth-identity">
+            <div class="auth-avatar" id="authAvatar" aria-hidden="true">K</div>
+            <div class="auth-copy">
+              <strong id="authHeading">الدخول بحساب Google</strong>
+              <p id="authDescription">سجّل الدخول لمزامنة مساهماتك عبر أجهزتك.</p>
+            </div>
+          </div>
+          <div class="auth-actions">
+            <a class="button button-google" id="googleSignInButton" href="/auth/google" aria-disabled="true" title="إعداد تسجيل Google غير مكتمل على السيرفر.">
+              <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path fill="#4285F4" d="M43.6 24.5c0-1.4-.1-2.8-.4-4.1H24v7.8h11a9.4 9.4 0 0 1-4.1 6.2v5h6.7c3.9-3.6 6-8.8 6-14.9Z"/><path fill="#34A853" d="M24 44c5.5 0 10.1-1.8 13.5-4.9l-6.7-5c-1.8 1.2-4 1.9-6.8 1.9-5.2 0-9.6-3.5-11.2-8.2H5.9v5.1A20 20 0 0 0 24 44Z"/><path fill="#FBBC05" d="M12.8 27.8a12 12 0 0 1 0-7.6v-5.1H5.9a20 20 0 0 0 0 17.8l6.9-5.1Z"/><path fill="#EA4335" d="M24 12c3 0 5.7 1 7.8 3.1l5.8-5.8C34.1 6 29.5 4 24 4A20 20 0 0 0 5.9 15.1l6.9 5.1C14.4 15.5 18.8 12 24 12Z"/></svg>
+              <span id="googleSignInText">المتابعة باستخدام Google</span>
+            </a>
+            <button class="button button-quiet" id="googleSignOutButton" type="button" hidden>تسجيل الخروج</button>
+          </div>
+          <p class="auth-privacy-note" id="authPrivacyNote">سيتم استخدام الاسم والبريد والصورة العامة من حساب Google فقط. لا نطلب صلاحية قراءة رسائل Gmail.</p>
+          <p class="auth-status" id="authStatus" role="status" aria-live="polite"></p>
+        </section>
+        <div class="account-stats" id="accountStats">
+</div>
+        <div class="panel-card">
+<div class="panel-title">
+<span class="panel-icon">▤</span>
+<div>
+<h3>سجل مساهماتي</h3>
+<p>المساهمات المرسلة من هذا المتصفح.</p>
+</div>
+</div>
+<div id="myContributions" class="table-holder">
+<div class="empty-state">
+<div>▤</div>
+<h3>لا توجد مساهمات بعد</h3>
+<p>شارك أول تجربة سعر وسنضيفها إلى سجلك.</p>
+<button class="button button-quiet" data-view="contribute">أضف أول سعر</button>
+</div>
+</div>
+</div>
+      </section>
+
+      <section class="view" id="view-admin">
+        <div class="page-heading">
+<div>
+<span class="kicker">إدارة المحتوى</span>
+<h1>مراجعة المساهمات</h1>
+<p>وصول الإدارة محمي برمز يتم ضبطه على السيرفر.</p>
+</div>
+</div>
+        <div class="admin-access panel-card" id="adminAccess">
+<label class="field-label" for="adminToken">رمز الإدارة</label>
+<input class="input-control" id="adminToken" type="password" placeholder="أدخل KAM_ADMIN_TOKEN"/>
+<button class="button button-primary" id="adminLoad">فتح قائمة المراجعة</button>
+</div>
+        <div class="panel-card" id="adminPanel" hidden>
+<div class="panel-title">
+<h3>المساهمات بانتظار المراجعة</h3>
+<button class="button button-quiet" id="adminRefresh">تحديث</button>
+</div>
+<div id="adminQueue">
+</div>
+</div>
+      </section>
+
+      <section class="view" id="view-about">
+        <div class="page-heading">
+<div>
+<span class="kicker">عن كَم؟</span>
+<h1>السعر له مصدر… والثقة لها قواعد</h1>
+<p>منصة مستقلة لمقارنة الأسعار وجمع تجارب الدفع في السوق المصري.</p>
+</div>
+</div>
+        <div class="about-grid">
+<article class="panel-card">
+<h3>ما الذي نقارنه؟</h3>
+<p>المنتجات من بيانات المتاجر ومزودي البيانات المصرح باستخدامهم، والخدمات من تجارب المجتمع التي تمر بالمراجعة.</p>
+</article>
+<article class="panel-card">
+<h3>ما الذي لا نفعله؟</h3>
+<p>لا نبيع المنتجات ولا نضمن مخزون المتاجر أو الأسعار حتى لحظة الدفع. لا نخلط الإعلانات المستعملة بأسعار المنتجات الجديدة.</p>
+</article>
+<article class="panel-card">
+<h3>الشفافية</h3>
+<p>نوضح مصدر السعر ووقت رصده وحالة التوفر. الترتيب الافتراضي بالسعر وليس بالمقابل الإعلاني.</p>
+</article>
+<article class="panel-card">
+<h3>الخصوصية</h3>
+<p>لا ترفع مستندًا يحتوي على رقم هاتف أو عنوان أو بيانات دفع. نظام الإنتاج يحتاج مراجعة سياسة الخصوصية وشروط الاستخدام قبل الإطلاق العام.</p>
+</article>
+</div>
+      </section>
+    </main>
+
+    <footer class="footer wrap">
+<div class="footer-brand">
+<span class="brand-mark">ك</span>
+<div>
+<strong>كَم؟ KAM</strong>
+<small>اعرف السعر قبل ما تدفع</small>
+</div>
+</div>
+<div class="footer-links">
+<button data-view="about">عن المنصة</button>
+<button data-view="explore">الأقسام</button>
+<button data-view="contribute">شارك سعرًا</button>
+<button data-view="admin">الإدارة</button>
+</div>
+<div class="footer-note">© <span id="year">
+</span> KAM. الأسعار قد تتغير لدى البائع.</div>
+</footer>
+  </div>
+
+  <nav class="mobile-bottom-nav" aria-label="تنقل سريع">
+    <button class="active" data-view="home">
+<span>⌂</span>
+<small>الرئيسية</small>
+</button>
+    <button data-view="explore">
+<span>⌕</span>
+<small>بحث</small>
+</button>
+    <button data-view="compare">
+<span>⇄</span>
+<small>قارن</small>
+</button>
+    <button data-view="saved">
+<span>♡</span>
+<small>حفظ</small>
+</button>
+    <button data-view="account">
+<span>◉</span>
+<small>حسابي</small>
+</button>
+  </nav>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite">
+</div>
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+<section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+<div class="modal-header">
+<h2 id="modalTitle">تفاصيل</h2>
+<button class="icon-button" id="modalClose" aria-label="إغلاق">×</button>
+</div>
+<div id="modalContent">
+</div>
+</section>
+</div>
+  <script src="/i18n.js" defer></script>
+  <script src="/app.js" defer></script>
+</body>
+</html>
