@@ -1,0 +1,5 @@
+.env
+node_modules/
+data/kam-data.json
+data/kam-data.json.tmp
+.DS_Store
